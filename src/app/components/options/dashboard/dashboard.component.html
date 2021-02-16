@@ -1,0 +1,28 @@
+<div class="jumbotron jumbotron-primary pt-2 pb-2 mt-3">
+    <h1 class="display-5">Top Heroes</h1>
+    <hr class="my-4">
+    <div class="row  justify-content-md-start">
+        <div class="col-lg-3 col-md-4 col-sm-6 " *ngFor="let heroe of topHeroes">
+            <div class="card shadow text-white bg-danger mb-3">
+                <div class="card-header">Score: {{heroe.puntuacio}}</div>
+                <div class="card-body">
+                    <h4 class="card-title">{{heroe.nom}}</h4>
+                    <p class="card-text"></p>
+                </div>
+                <div class="card-footer bg-transparent border-success"><button (click)="play(heroe.idx)" class="btn btn-success btn-block"><i class="fas fa-dice"></i></button></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row row-light  justify-content-md-start pt-3" *ngFor="let heroes2 of totHeroes">
+    <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let heroe of heroes2">
+        <div class="card shadow text-white bg-danger mb-3">
+            <div class="card-header">Score:{{heroe.puntuacio}}</div>
+            <div class="card-body">
+                <h4 class="card-title">{{heroe.nom}}</h4>
+                <p class="card-text"></p>
+            </div>
+            <div class="card-footer bg-transparent border-success"><button (click)="play(heroe.idx)" class="btn btn-success btn-block"><i class="fas fa-dice"></i></button></div>
+        </div>
+    </div>
+</div>

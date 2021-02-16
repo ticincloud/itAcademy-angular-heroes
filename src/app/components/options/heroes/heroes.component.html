@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark mt-3 mb-2">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#dnavbar2" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="dnavbar2">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active">
+                <button class="btn btn-primary" (click)="addHero()">Add Hero</button>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" autocomplete="off" [formGroup]="formCerca" (ngSubmit)="cercar()">
+            <input class="form-control mr-sm-2" formControlName="filtre" type="text" placeholder="Search hero">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-secondary my-2 my-sm-0" (click)="reset()" type="button">Reset</button>
+        </form>
+    </div>
+</nav>
+<div class="row  justify-content-md-start mb-3" *ngFor="let heroes2 of heroes; let i = index">
+    <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let heroe of heroes2; let i2 = index">
+        <div class="card shadow text-white bg-danger mb-3" style="cursor: pointer;" (click)="editHero(heroe.idx)">
+            <div class="card-header">Score: {{heroe.puntuacio}}</div>
+            <div class="card-body">
+                <h4 class="card-title">{{heroe.nom}}</h4>
+                <p class="card-text"></p>
+            </div>
+        </div>
+    </div>
+</div>

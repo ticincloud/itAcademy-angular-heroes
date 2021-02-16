@@ -1,0 +1,23 @@
+<div class="row  d-flex justify-content-center  mt-4">
+    <div class="col-8 shadow rounded p-3">
+        <form autocomplete="off" [formGroup]="formHero" (ngSubmit)="desar()">
+            <fieldset>
+                <legend class="text-primary border-bottom border-primary" style="border-width: 2px;">{{titol}}</legend>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label for="nom">Name</label>
+                            <input class="form-control" #myinput type="text" formControlName="nom" [class.is-invalid]="nomRepetit">
+                            <small *ngIf="nomRepetit" class="text-danger">Taken name</small>
+                        </div>
+                    </div>
+                </div>
+                <small *ngIf="error" class="text-danger">{{ msgError }}</small>
+                <div class="d-flex justify-content-end border-top border-primary pt-2" style="border-width: 2px;">
+                    <button type="button" class="btn btn-primary mr-2" (click)="tornar()">Cancel</button>
+                    <button type="submit" class="btn btn-success" [disabled]="!formHero.valid">Save</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
